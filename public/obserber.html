@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntersectionObserver测试</title>
+    <style>
+        .demo1,
+        .demo2 {
+            width: 120px;
+            height: 120px;
+            border: 1px solid #000;
+            position: relative;
+            text-align: center;
+            line-height: 120px;
+        }
+
+        .demo1 {
+            top: 300px;
+        }
+
+        .demo2 {
+            top: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>IntersectionObserver 测试</div>
+    <div class="demo1">demo1</div>
+    <div class="demo2">demo2</div>
+    <script>
+        const ob = new window.IntersectionObserver(function (e) {
+            console.log(e);
+            const demo2 = e.find((dom) => dom.target.className === "demo2")
+            if (demo2.intersectionRatio > 0) {
+                console.log("demo2 显示");
+            } else {
+                console.log("demo2 隐藏");
+            }
+        }, {
+            threshold: [0.5, 1]
+        })
+        ob.observe(document.querySelector(".demo1"))
+        ob.observe(document.querySelector(".demo2"))
+        // 停止监听
+        // ob.disconnect()
+        // 停止对某一元素的监听
+        // ob.unobserve(demo2)
+        // options threshold 槛值
+    </script>
+</body>
+
+</html>

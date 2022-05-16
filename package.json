@@ -1,0 +1,26 @@
+{
+  "name": "code-robot-monitor",
+  "version": "1.0.0",
+  "description": "埋点监控前端SDK",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "dev": "microbundle watch",
+    "start": "parcel public/index.html",
+    "build": "microbundle src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/qs": "^6.9.7",
+    "microbundle": "^0.15.0",
+    "parcel": "^2.5.0"
+  },
+  "dependencies": {
+    "qs": "^6.10.3"
+  }
+}

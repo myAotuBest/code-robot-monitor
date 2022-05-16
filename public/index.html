@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>埋点监控SDK</title>
+</head>
+
+<body>
+    <div>
+        <a href="https://www.baidu.com"></a>
+    </div>
+    <!-- 曝光埋点：由不可见变为可见 （最初未渲染）-->
+    <button id="add">点击添加</button>
+    <div style="height:2000px;background-color: red;" appear></div>
+    <!-- 曝光埋点：由不可见变为可见 （渲染未显示）-->
+    <div style="height: 100px;background-color: yellow;" appear class="demo2" data-type="1" data-index="10"></div>
+    <script src="./monitor/index.ts" type="module"></script>
+</body>
+
+</html>
